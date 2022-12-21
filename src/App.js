@@ -5,13 +5,19 @@ import Card  from './components/Card';
 import { Header } from './components/Header';
 import { Drawer } from './components/Drawer';
 
+const arr = [
+  {name: 'Кроссовки Eugene SM 360', price: '12 990 руб.', img: '/img/sneakers/1.jpg',},
+  {name: 'Кроссовки Pablo ESC ', price: '13 990 руб.', img: '/img/sneakers/2.jpg',}
+  
+]
+
 function App() {
   return (
     <div className="wrapper clear">
       <Header/>
       <Drawer/>
-        <div className="content p-40 ">
 
+        <div className="content p-40 ">
           <div className='d-flex justify-between'>
             <h1 className=''>Все кросcовки</h1>
             <div className='search'>
@@ -19,17 +25,12 @@ function App() {
               <input placeholder='Поиск...' />
             </div>
           </div>
-{/* кросовки */}
 
           <div className='d-flex pt-40 flex-wrap'>
-          <Card/>
-          <Card/>
-          <Card/>
-            
-
-            
+            {arr.map((el)=>
+            <Card name={el.name} price={el.price} img={el.img}/>
+            )}
           </div>
-          
         </div>
       </div>
     );
