@@ -2,8 +2,8 @@ import './index.scss';
 import 'macro-css'
 
 import Card  from './components/Card';
-import { Header } from './components/Header';
-import { Drawer } from './components/Drawer';
+import Header from './components/Header';
+import Drawer from './components/Drawer';
 
 const arr = [
   {name: 'Кроссовки Eugene SM 360', price: '12 990 руб.', img: '/img/sneakers/1.jpg',},

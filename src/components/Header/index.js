@@ -1,9 +1,11 @@
-export function Header(){
+import styles from './Header.module.scss'
+
+function Header(){
     return (
         <header className='d-flex justify-between p-40'>
           <div className='d-flex align-center '>
             <img width={50} height={40} src="/img/logo.png" alt="logo" />
-            <div className='LeftText'>
+            <div className={styles.LeftText}>
               <h3>LINNIK FITNESS</h3>
               <p className='opacity-5'>Школа фитнес тренеров</p>
             </div>
@@ -18,3 +20,4 @@ export function Header(){
         </header>
     )
 }
+export default Header

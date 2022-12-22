@@ -1,7 +1,9 @@
-export function Drawer (){
+import styles from './Drawer.module.scss'
+
+function Drawer (){
     return(
-        <div style={{display: 'none'}} className="overlay">
-        <div className="drawer">
+        <div style={{display: 'none'}} className={styles.overlay}>
+        <div className={styles.drawer}>
           <div className='d-flex justify-between'>
           <h2 className='mb-20'>Корзина</h2>
           <img 
@@ -12,7 +14,7 @@ export function Drawer (){
                 src="/img/cross.svg" 
                 alt="delite" />
           </div>
-          <div className="items">
+          <div className={styles.items}>
             <div className="cartItem d-flex align-center">
               <img 
                 className='mr-20'
@@ -25,13 +27,13 @@ export function Drawer (){
                 <b>12 999 руб.</b>
               </div>
               <img 
-                className='btnRemove'
+                className={styles.btnRemove}
                 width={25} 
                 height={25} 
                 src="/img/cross.svg" 
                 alt="delite" />
             </div>
-            <div className="cartItem d-flex align-center">
+            <div className={styles.cartItem}>
               <img 
                 className='mr-20'
                 width={70} 
@@ -73,3 +75,5 @@ export function Drawer (){
       </div>
     )
 }
+
+export default Drawer
