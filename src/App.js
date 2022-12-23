@@ -1,3 +1,4 @@
+import React from 'react';
 import './index.scss';
 import 'macro-css'
 
@@ -12,6 +13,8 @@ const arr = [
 ]
 
 function App() {
+
+
   return (
     <div className="wrapper clear">
       <Header/>
@@ -28,7 +31,13 @@ function App() {
 
           <div className='d-flex pt-40 flex-wrap'>
             {arr.map((el)=>
-            <Card name={el.name} price={el.price} img={el.img}/>
+            <Card 
+              name={el.name} 
+              price={el.price} 
+              img={el.img}
+              onClickPlus = {()=>alert('plus')}
+              onClickFavorite = {()=>alert('favorite')}
+              />
             )}
           </div>
         </div>

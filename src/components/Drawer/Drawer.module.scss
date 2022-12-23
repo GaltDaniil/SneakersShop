@@ -71,6 +71,10 @@
       }
       
     }
+    .items{
+      display: flex;
+      flex: 1;
+    }
   }
   .overlay{
     position: absolute;
@@ -81,11 +85,10 @@
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
   }
-  .items{
-    flex: 1;
-  }
+  
   
   .cartItem{
+    display: flex;
     border: 1px solid #ececec;
     border-radius: 20px;
     overflow: hidden;
