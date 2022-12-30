@@ -1,0 +1,25 @@
+.cartItem{
+    display: flex;
+    border: 1px solid #ececec;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 10px;
+    p{
+      font-size: 14px;
+    }
+    b{
+      font-size: 12px;
+    }
+    .btnRemove{
+      border: 1px solid #6e6e6e;
+      border-radius: 5px;
+      padding: 7px;
+      opacity: 0.3; 
+      cursor: pointer;
+      transition: opacity 0.15s ease-in-out;
+      &:hover{
+        opacity: 0.6;
+      }
+    }
+  }

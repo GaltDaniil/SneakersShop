@@ -1,6 +1,13 @@
 header{
     border-bottom: 3px solid #e0e0ea;
+
+    li{
+      img{
+        cursor: pointer;
+      }
+    }
   }
+
   .LeftText{
     h3, p{
       margin: 0px;
@@ -9,4 +16,5 @@ header{
     p{
       font-size: 13px;
     }
+    
   }

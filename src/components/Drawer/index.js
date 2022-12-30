@@ -1,12 +1,21 @@
+import React from 'react'
 import styles from './Drawer.module.scss'
+import {CartItem} from '../CartItem'
 
-function Drawer (){
+
+function Drawer (props){
+
+const [countPrice, setCountPrice] = React.useState(0)
+console.log(props.cartItems)
+
     return(
-        <div className={styles.overlay}>
+      <div className={styles.overlay}>
+        
         <div className={styles.drawer}>
           <div className='d-flex justify-between'>
             <h2 className='mb-20'>Корзина</h2>
             <img 
+                  onClick={props.cartChanger}
                   style={{opacity: 0.4, cursor: 'pointer'}}
                   className='btnRemove'
                   width={20} 
@@ -14,48 +23,53 @@ function Drawer (){
                   src="/img/cross.svg" 
                   alt="delite" />
           </div>
-          <div className={styles.items}>
-            <div className={styles.cartItem}>
-              <img 
-                className='mr-20'
-                width={70} 
-                height={70} 
-                src="/img/sneakers/1.jpg" 
-                alt="" />
-              <div className='mr-20'>
-                <p className='mb-5'>Мужские кроссовки Nike Air Max 270</p>
-                <b>13 999 руб.</b>
-              </div>
-              <img 
-                className={styles.btnRemove}
-                width={25} 
-                height={25} 
-                src="/img/cross.svg" 
-                alt="delite" />
+
+          {/* ПУСТАЯ КОРЗИНА */}
+          
+          {props.cartItems.length===0?<div className={styles.emptyCart}>
+            
+            <img width={150} src="/img/empty1.png" alt="EmptyBox" />
+            <h3>Корзина пустая</h3>
+            <p>Добавьте хотя бы один товар в корзину</p>
+            <button className={styles.greenButton}>
+             Закрыть
+            </button>
+          </div>:
+          <div className={styles.inDrawer} >
+            <div className={styles.items}>
+            {props.cartItems.map((el, index)=>
+              <CartItem
+                key={index} 
+                title={el.title} 
+                price={el.price} 
+                img={el.img}
+                obj={el}
+                onRemove={(obj)=>{props.onRemove(el)}}
+                />
+              )}
+            </div>
+            <div className={styles.cartTotalBlock}>
+            <ul >
+              <li>
+                <span>Итого:</span>
+                <div></div>
+                <b>{countPrice} руб.</b>
+              </li>
+              <li>
+                <span>Налог:</span>
+                <div></div>
+                <b>1023 руб.</b>
+              </li>
+            </ul>
+            <button className={styles.greenButton}> Оформить заказ
+              <img src="/img/arrow-w.png" alt='arrow'/>
+            </button>
             </div>
           </div>
-
-          <div className={styles.cartTotalBlock}>
-          <ul >
-            <li>
-              <span>Итого:</span>
-              <div></div>
-              <b>21 498 руб.</b>
-            </li>
-            <li>
-              <span>Налог:</span>
-              <div></div>
-              <b>1023 руб.</b>
-            </li>
-          </ul>
-          <button className={styles.greenButton}> Оформить заказ
-            <img src="/img/arrow-w.png" alt='arrow'/>
-          </button>
-          </div>
-          
+          }
         </div>
-      </div>
-    )
+      </div>    
+  )
 }
 
 export default Drawer
