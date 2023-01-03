@@ -1,13 +1,15 @@
 import React from 'react'
 import styles from './Header.module.scss'
+import { Link } from 'react-router-dom'
 
-
-function Header(props){
+export function Header({cartChanger}){
 
     return (
         <header className='d-flex justify-between p-40'>
           <div className='d-flex align-center '>
+          <Link to='/'>
             <img width={50} height={40} src="/img/logo.png" alt="logo" />
+          </Link>
             <div className={styles.LeftText}>
               <h3>LINNIK FITNESS</h3>
               <p className='opacity-5'>Школа фитнес тренеров</p>
@@ -15,11 +17,13 @@ function Header(props){
           </div>
             <ul className='d-flex align-center'>
               <li className='mr-35 d-flex align-center'>
-                <img onClick={props.cartChanger} className="mr-10" width={27} height={27} src="/img/cart.svg" alt="logo" />
+                <img onClick={cartChanger} className="mr-10" width={27} height={27} src="/img/cart.svg" alt="logo" />
                 <span>1285 руб</span>
               </li>
               <li className='mr-30'>
-                <img width={23} height={23} src="/img/unlike.svg" alt="logo"/>
+                <Link to='/favorites'>
+                  <img width={23} height={23} src="/img/unlike.svg" alt="logo"/>
+                </Link>
               </li>
               <li className='mr-30'>
                 <img width={23} height={23} src="/img/person2.svg" alt="logo"/> </li>
@@ -27,4 +31,3 @@ function Header(props){
         </header>
     )
 }
-export default Header
