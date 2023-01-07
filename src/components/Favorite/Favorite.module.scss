@@ -5,10 +5,48 @@
     }
 }
 .main{
+  *{
+    margin-bottom: 15px;
+  }
+
     display: flex;
     padding-top: 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    h3{
+      font-size: 22px;
+    }
+    p{
+      font-size: 14px;
+      width: 300px;
+      text-align: center;
+      opacity: 0.7;
+      margin-bottom: 30px;
+    }
     
+    .greenButton{
+      background: #9dd558;
+      border: 0px;
+      border-radius: 15px;
+      height: 55px;
+      width: 270px;
+      font-size: 16px;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.1 ease-in-out;
+      cursor: pointer;
+
+      
+    &:hover{
+      background: lighten($color: #9dd558, $amount: 5);
+    }
+    &:active{
+      background: darken($color: #9dd558, $amount: 5);
+      
+    }
+    }
 }

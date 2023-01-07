@@ -2,11 +2,13 @@ import React from 'react'
 import styles from './Drawer.module.scss'
 import {CartItem} from '../CartItem'
 
+import { AppContext } from '../../App'
+
 
 function Drawer (props){
 
 const [countPrice, setCountPrice] = React.useState(0)
-console.log(props.cartItems)
+const {cartItems} = React.useContext(AppContext)
 
     return(
       <div className={styles.overlay}>
@@ -26,7 +28,7 @@ console.log(props.cartItems)
 
           {/* ПУСТАЯ КОРЗИНА */}
           
-          {props.cartItems.length===0?<div className={styles.emptyCart}>
+          {cartItems.length===0?<div className={styles.emptyCart}>
             
             <img width={150} src="/img/empty1.png" alt="EmptyBox" />
             <h3>Корзина пустая</h3>
@@ -37,14 +39,10 @@ console.log(props.cartItems)
           </div>:
           <div className={styles.inDrawer} >
             <div className={styles.items}>
-            {props.cartItems.map((el, index)=>
+            {cartItems.map((el, index)=>
               <CartItem
-                key={index} 
-                title={el.title} 
-                price={el.price} 
-                img={el.img}
-                obj={el}
-                onRemove={(obj)=>{props.onRemove(el)}}
+                key={index}
+                {...el}
                 />
               )}
             </div>
