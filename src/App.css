@@ -12,3 +12,7 @@ header{
 header{
   display: flex;
 }
+.content{
+  display: flex;
+  width: 300px;
+}

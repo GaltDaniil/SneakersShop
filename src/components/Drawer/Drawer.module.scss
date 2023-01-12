@@ -37,7 +37,6 @@
       img{
         margin-bottom: 20px;
       }
-
       h3{
         font-size: 24px;
         margin-bottom: 10px;
@@ -46,8 +45,9 @@
         font-size: 14px;
         opacity: 0.6;
         margin-bottom: 40px;
+        width: 200px;
+        text-align: center;
       }
-      
     }
 
     .items{
@@ -112,8 +112,13 @@
     }
     &:active{
       background: darken($color: #9dd558, $amount: 5);
-      
     }
+
+    
+    &:disabled{
+      background: #bebebe
+    }
+
     img{
       margin-left: 20px;
       width: 15px;

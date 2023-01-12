@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from './Header.module.scss'
 import { Link } from 'react-router-dom'
+import { AppContext } from '../../App'
 
 export function Header({cartChanger}){
+
+  const {priceCount} = React.useContext(AppContext)
 
     return (
         <header className='d-flex justify-between p-40'>
@@ -18,7 +21,7 @@ export function Header({cartChanger}){
             <ul className='d-flex align-center'>
               <li className='mr-35 d-flex align-center'>
                 <img onClick={cartChanger} className="mr-10" width={27} height={27} src="/img/cart.svg" alt="logo" />
-                <span>1285 руб</span>
+                <span onClick={cartChanger}>{priceCount} руб</span>
               </li>
               <li className='mr-30'>
                 <Link to='/favorites'>
@@ -26,7 +29,11 @@ export function Header({cartChanger}){
                 </Link>
               </li>
               <li className='mr-30'>
-                <img width={23} height={23} src="/img/person2.svg" alt="logo"/> </li>
+                <Link to="/orders">
+                <img width={23} height={23} src="/img/person2.svg" alt="logo"/>
+                </Link> 
+              </li>
+                
             </ul>
         </header>
     )

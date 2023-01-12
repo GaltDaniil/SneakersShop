@@ -6,7 +6,7 @@ import { AppContext } from "../../App";
 
 export function Favorites({searchValue, onChangeSearch, setSearchValue}){
     
-  const {onFavorite, onFavorited, favoriteItems, AddItemToFavorites, RemoveItemFromFavorites} = React.useContext(AppContext)
+  const {favoriteItems} = React.useContext(AppContext)
 
   return(
         <div className={styles.content}>

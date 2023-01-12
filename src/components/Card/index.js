@@ -41,7 +41,7 @@ export function Card({title, isLoading, img, price, favAdded, id, parentid}) {
         <p>Цена:</p>
         <b>{price} руб</b>
       </div>
-      <img className={styles.btnAddCart} onClick={()=>onPlus({id, title, img, price, parentid})} width={25} height={25} src={!IsItemAdded(title) ? "/img/unchecked.png": "/img/checked.png" } alt="Plus" />
+      <img className={styles.btnAddCart}  onClick={()=>onPlus({id, title, img, price, parentid})} width={25} height={25} src={!IsItemAdded(title) ? "/img/unchecked.png": "/img/checked.png" } alt="Plus" />
     </div>
 
   </div>

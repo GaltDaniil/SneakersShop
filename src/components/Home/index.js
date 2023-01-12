@@ -5,7 +5,7 @@ import {Card} from "../Card";
 
 export function Home(props){
     
-  const {IsItemAddToCart, items, IsItemAddToFavorite, AddItemToCart, RemoveItemToCart, AddItemToFavorites, RemoveItemFromFavorites} = React.useContext(AppContext)
+  const {items} = React.useContext(AppContext)
 
   const filtredItems = items.filter((el)=>el.title.toLowerCase().includes(props.searchValue.toLowerCase()))
 
