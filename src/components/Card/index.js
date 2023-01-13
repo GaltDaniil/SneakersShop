@@ -32,7 +32,7 @@ export function Card({title, isLoading, img, price, favAdded, id, parentid, notF
   </div>:
   <div className={styles.card}>
       {notFav?null:<button className={styles.btnLike} onClick={()=>onFavorite({id, title, img, price, parentid})}>
-        <img  width={15} height={15}  src={!onFavorited(title)?"/img/unlike.svg":"/img/like.svg"} alt="unlike" />
+        <img  width={15} height={15}  src={!onFavorited(title)?"img/unlike.svg":"img/like.svg"} alt="unlike" />
       </button>}
     <img width={133} height={112} src={img} alt="" />
     <h5>{title}</h5>
@@ -41,7 +41,7 @@ export function Card({title, isLoading, img, price, favAdded, id, parentid, notF
         <p>Цена:</p>
         <b>{price} руб</b>
       </div>
-      {notCheck?null:<img className={styles.btnAddCart}  onClick={()=>onPlus({id, title, img, price, parentid})} width={25} height={25} src={!IsItemAdded(title) ? "/img/unchecked.png": "/img/checked.png" } alt="Plus" />}
+      {notCheck?null:<img className={styles.btnAddCart}  onClick={()=>onPlus({id, title, img, price, parentid})} width={25} height={25} src={!IsItemAdded(title) ? "img/unchecked.png": "img/checked.png" } alt="Plus" />}
     </div>
 
   </div>

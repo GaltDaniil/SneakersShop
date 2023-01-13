@@ -23,7 +23,7 @@ export function CartItem({id, title, img, price, parentid=id, RemoveItemToCart})
                 onClick={()=>{RemoveCartItem(parentid)}}
                 width={25} 
                 height={25} 
-                src="/img/cross.svg" 
+                src="img/cross.svg" 
                 alt="delite" />
             </div>
     )

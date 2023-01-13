@@ -13,16 +13,16 @@ export function Favorites({searchValue, onChangeSearch, setSearchValue}){
           <div className='d-flex justify-between'>
             <h1 className=''>{searchValue?`Поиск по: ${searchValue}`:'Мне нравится'}</h1>
             <div className='search'>
-              <img width={15} height={15} src="/img/search2.svg" alt="search" />
+              <img width={15} height={15} src="img/search2.svg" alt="search" />
               <input onChange={onChangeSearch} value={searchValue} placeholder='Поиск...' />
-              {searchValue?<img onClick={()=>setSearchValue('')} className='searchCross' src="/img/cross.svg" alt="close" />:null}
+              {searchValue?<img onClick={()=>setSearchValue('')} className='searchCross' src="img/cross.svg" alt="close" />:null}
               
             </div>
           </div>
           
             {favoriteItems.length===0?
                 <div className={styles.main}>
-                        <img src="./img/empty2.png" alt="" />
+                        <img src="img/empty2.png" alt="" />
                         <h3>Вы еще ничего не выбрали</h3>
                         <p>Вернитесь на главную страницу и выберите хоть что-нибудь!</p>
                         <Link to={"/"}>

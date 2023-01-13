@@ -11,7 +11,7 @@ export function Header({cartChanger}){
         <header className='d-flex justify-between p-40'>
           <div className='d-flex align-center '>
           <Link to='/'>
-            <img width={50} height={40} src="/img/logo.png" alt="logo" />
+            <img width={50} height={40} src="img/logo.png" alt="logo" />
           </Link>
             <div className={styles.LeftText}>
               <h3>LINNIK FITNESS</h3>
@@ -20,12 +20,12 @@ export function Header({cartChanger}){
           </div>
             <ul className='d-flex align-center'>
               <li className='mr-35 d-flex align-center'>
-                <img onClick={cartChanger} className="mr-10" width={27} height={27} src="/img/cart.svg" alt="logo" />
+                <img onClick={cartChanger} className="mr-10" width={27} height={27} src="img/cart.svg" alt="logo" />
                 <span onClick={cartChanger}>{priceCount} руб</span>
               </li>
               <li className='mr-30'>
                 <Link to='/favorites'>
-                  <img width={23} height={23} src="/img/unlike.svg" alt="logo"/>
+                  <img width={23} height={23} src="img/unlike.svg" alt="logo"/>
                 </Link>
               </li>
               <li className='mr-30'>

@@ -52,7 +52,7 @@ const closeDrawer = ()=>{
                   className='btnRemove'
                   width={20} 
                   height={20} 
-                  src="/img/cross.svg" 
+                  src="img/cross.svg" 
                   alt="delite" />
           </div>
 
@@ -69,7 +69,7 @@ const closeDrawer = ()=>{
           <Info
             title={isOrderComplited?"Ваш заказ принят":"Корзина пуста"}
             description = {isOrderComplited?`Заказ с номером ${orderId} успешно передан в курьерскую службу.`:`Добавьте хотя бы один продукт в вашу корзину`}
-            imgUrl={isOrderComplited?"/img/order-is-ready.png":"/img/empty1.png"}
+            imgUrl={isOrderComplited?"img/order-is-ready.png":"img/empty1.png"}
           />:
           <div className={styles.inDrawer} >
             <div className={styles.items}>
@@ -94,7 +94,7 @@ const closeDrawer = ()=>{
               </li>
             </ul>
             <button onClick={()=>postOrder()} disabled={isLoading?true:false} className={styles.greenButton}> Оформить заказ
-              <img src="/img/arrow-w.png" alt='arrow'/>
+              <img src="img/arrow-w.png" alt='arrow'/>
             </button>
             </div>
           </div>

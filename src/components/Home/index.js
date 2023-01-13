@@ -14,9 +14,9 @@ return (
           <div className='d-flex justify-between'>
             <h1 className=''>{props.searchValue?`Поиск по: ${props.searchValue}`:"Все кросcовки"}</h1>
             <div className='search'>
-              <img width={15} height={15} src="/img/search2.svg" alt="search" />
+              <img width={15} height={15} src="img/search2.svg" alt="search" />
               <input onChange={props.onChangeSearch} value={props.searchValue} placeholder='Поиск...' />
-              {props.searchValue?<img onClick={()=>props.setSearchValue('')} className='searchCross' src="/img/cross.svg" alt="close" />:null}
+              {props.searchValue?<img onClick={()=>props.setSearchValue('')} className='searchCross' src="img/cross.svg" alt="close" />:null}
             </div>
           </div>
           
