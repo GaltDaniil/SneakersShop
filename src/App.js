@@ -40,8 +40,8 @@ function App() {
     
     setcartItems(cartItemResp.data)
     setFavoriteItems(favoriteResp.data)
-    
     setItems(itemResp.data)
+    
     setIsLoading(false)
     }
     DownloadData()
