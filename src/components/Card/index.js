@@ -5,10 +5,10 @@ import { AppContext } from '../../App'
 
 
 
-export function Card({title, isLoading, img, price, favAdded, id, parentid}) {
+export function Card({title, isLoading, img, price, favAdded, id, parentid, notFav=false, notCheck=false}) {
   
 
-  const {onPlus, isWait,  onFavorited, onFavorite, IsItemAdded} = React.useContext(AppContext)
+  const {onPlus,  onFavorited, onFavorite, IsItemAdded} = React.useContext(AppContext)
 
 
   
@@ -31,9 +31,9 @@ export function Card({title, isLoading, img, price, favAdded, id, parentid}) {
   </ContentLoader>
   </div>:
   <div className={styles.card}>
-      <button className={styles.btnLike} onClick={()=>onFavorite({id, title, img, price, parentid})}>
+      {notFav?null:<button className={styles.btnLike} onClick={()=>onFavorite({id, title, img, price, parentid})}>
         <img  width={15} height={15}  src={!onFavorited(title)?"/img/unlike.svg":"/img/like.svg"} alt="unlike" />
-      </button>
+      </button>}
     <img width={133} height={112} src={img} alt="" />
     <h5>{title}</h5>
     <div className='d-flex justify-between pt-10 align-center'>
@@ -41,7 +41,7 @@ export function Card({title, isLoading, img, price, favAdded, id, parentid}) {
         <p>Цена:</p>
         <b>{price} руб</b>
       </div>
-      <img className={styles.btnAddCart}  onClick={()=>onPlus({id, title, img, price, parentid})} width={25} height={25} src={!IsItemAdded(title) ? "/img/unchecked.png": "/img/checked.png" } alt="Plus" />
+      {notCheck?null:<img className={styles.btnAddCart}  onClick={()=>onPlus({id, title, img, price, parentid})} width={25} height={25} src={!IsItemAdded(title) ? "/img/unchecked.png": "/img/checked.png" } alt="Plus" />}
     </div>
 
   </div>

@@ -6,7 +6,7 @@ import axios from'axios'
 import {Route, Routes} from 'react-router-dom'
 
 import { Header } from './components/Header';
-import Drawer from './components/Drawer';
+import { Drawer } from './components/Drawer';
 import { Home } from './components/Home';
 import { Favorites } from './components/Favorite';
 import { Orders } from './Orders';
@@ -26,20 +26,21 @@ function App() {
   const [items, setItems] = React.useState([])
   const [cartItems, setcartItems] = React.useState([])
   const [favoriteItems, setFavoriteItems] = React.useState([])
-  const [orders, setOrders] = React.useState([])
+ 
 
   React.useEffect(()=>{
     try {
     async function DownloadData (){
       
-    const cartItemResp = await axios.get('https://63a540482a73744b00893060.mockapi.io/cart')
-    const favoriteResp = await axios.get('https://63a540482a73744b00893060.mockapi.io/favorites')
-    const orderResp = await axios.get('https://63a540482a73744b00893060.mockapi.io/orders')
-    const itemResp = await axios.get('https://63a540482a73744b00893060.mockapi.io/items')
+    const [cartItemResp, favoriteResp, itemResp] = await Promise.all([
+      await axios.get('https://63a540482a73744b00893060.mockapi.io/cart'),
+      await axios.get('https://63a540482a73744b00893060.mockapi.io/favorites'),
+      await axios.get('https://63a540482a73744b00893060.mockapi.io/items')
+    ])
     
     setcartItems(cartItemResp.data)
     setFavoriteItems(favoriteResp.data)
-    setOrders(orderResp.data)
+    
     setItems(itemResp.data)
     setIsLoading(false)
     }
@@ -136,7 +137,6 @@ function App() {
       items, 
       cartItems, 
       favoriteItems,
-      orders,
 
       setPriceCount,
       setcartItems,
@@ -144,7 +144,6 @@ function App() {
       onPlus, 
       onFavorited, 
       onFavorite,
-      setOrders,
       setVisibleDrawer,
       IsItemAdded,
       updateCountPrice
@@ -155,14 +154,12 @@ function App() {
         <Header 
           cartChanger={ShowDrawer} 
         />
-        {isDrawer && 
-        
-          <Drawer 
+         <Drawer 
             items = {items}
             cartItems = {cartItems}
             isDrawer = {isDrawer}
             cartChanger = {ShowDrawer}
-          />}
+          />
         
         <Routes>
           <Route path='/' element={
