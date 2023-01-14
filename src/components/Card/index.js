@@ -34,7 +34,7 @@ export function Card({title, isLoading, img, price, favAdded, id, parentid, notF
       {notFav?null:<button className={styles.btnLike} onClick={()=>onFavorite({id, title, img, price, parentid})}>
         <img  width={15} height={15}  src={!onFavorited(title)?"img/unlike.svg":"img/like.svg"} alt="unlike" />
       </button>}
-    <img width={133} height={112} src={img} alt="" />
+    <img width={133} height={112} src={process.env.PUBLIC_URL +img} alt="" />
     <h5>{title}</h5>
     <div className='d-flex justify-between pt-10 align-center'>
       <div className='d-flex flex-column'>
