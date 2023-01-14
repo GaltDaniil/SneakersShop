@@ -41,7 +41,7 @@ function App() {
     setcartItems(cartItemResp.data)
     setFavoriteItems(favoriteResp.data)
     setItems(itemResp.data)
-    
+
     setIsLoading(false)
     }
     DownloadData()
@@ -162,7 +162,7 @@ function App() {
           />
         
         <Routes>
-          <Route path='/' element={
+          <Route path='' element={
           
           <Home
           onChangeSearch = {onChangeSearch}
