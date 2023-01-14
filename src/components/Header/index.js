@@ -11,11 +11,11 @@ export function Header({cartChanger}){
         <header className='d-flex justify-between p-40'>
           <div className='d-flex align-center '>
           <Link to='/'>
-            <img width={50} height={40} src="img/logo.png" alt="logo" />
+            <img width={50} height={40} src="img/logo-shop.png" alt="logo" />
           </Link>
             <div className={styles.LeftText}>
-              <h3>LINNIK FITNESS</h3>
-              <p className='opacity-5'>Школа фитнес тренеров</p>
+              <h3>SNEAKERS SHOP</h3>
+              <p className='opacity-5'>React магазин кросовок</p>
             </div>
           </div>
             <ul className='d-flex align-center'>
