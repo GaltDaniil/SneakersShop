@@ -33,7 +33,7 @@ export const Orders = () => {
                 <Info
                   title={"Заказов еще нет"}
                   description = {`Закажите хотя бы один продукт`}
-                  imgUrl={"/img/empty1.png"}
+                  imgUrl={"img/empty1.png"}
                 />:<div >
                   {orders.reverse().map((el)=>{
                     return(

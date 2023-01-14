@@ -30,7 +30,7 @@ export function Header({cartChanger}){
               </li>
               <li className='mr-30'>
                 <Link to="/orders">
-                <img width={23} height={23} src="/img/person2.svg" alt="logo"/>
+                <img width={23} height={23} src="img/person2.svg" alt="logo"/>
                 </Link> 
               </li>
                 
